@@ -136,18 +136,18 @@ app.post('/rainy', function(req,res){
 })
 //////
 
-
-  app.delete('/users', function (req,res){
-
-  db.none("DELETE FROM users WHERE id = $1").then(function(data){
+////
+app.delete('/users/:id',function(req,res){
+  id = req.params.id
+  db.none("DELETE FROM users WHERE id=$1",[id]).then(function(data){
       console.log('delete done!!!!!')
-     res.redirect('/');
+      res.render('signup/index.html')
     })
-  });//end
+})
+
 
 
 //use res.redirect
 app.listen(3000, function () {
   console.log('its working');
 });
-

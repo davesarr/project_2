@@ -115,6 +115,20 @@ $(document).ready(function(){
 //         }
 //       })
 //    });
+ $('#delete').on('click',function(e){
+    e.preventDefault()
+    console.log('This is working')
+    id = $(this).attr('data-id')
+    div = $(this).parent()
+    $.ajax({
+      "url":"http://localhost:3000/users/"+id,
+      "method":"DELETE",
+      "success":function(){
+        //console.log(data)
+        $('body').remove()
+      }
+    })
+  })
 
 
 });//end of function

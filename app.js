@@ -146,8 +146,12 @@ app.delete('/users/:id',function(req,res){
 })
 
 
+app.set('port', (process.env.PORT || 5000));
+app.listen(app.get('port'), function() {
+  console.log('Node app is running on port', app.get('port'));
+});
 
 //use res.redirect
-app.listen(3000, function () {
-  console.log('its working');
-});
+// app.listen(3000, function () {
+//   console.log('its working');
+// });

@@ -1,0 +1,38 @@
+
+DROP TABLE IF EXISTS cold;
+DROP TABLE IF EXISTS rainy;
+DROP TABLE IF EXISTS hot;
+
+CREATE TABLE users(
+  id SERIAL PRIMARY KEY,
+  email VARCHAR(255),
+  password_digest VARCHAR(255)
+);
+
+
+
+CREATE TABLE cold (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  category VARCHAR(255),
+  image VARCHAR (200) NOT NULL
+
+);
+
+
+CREATE TABLE rainy (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  category VARCHAR(255),
+  image VARCHAR (200) NOT NULL
+
+);
+
+
+CREATE TABLE hot (
+  id SERIAL PRIMARY KEY,
+  name VARCHAR(255),
+  category VARCHAR(255),
+  image VARCHAR (200) NOT NULL
+
+);

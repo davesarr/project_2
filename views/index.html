@@ -1,0 +1,82 @@
+<!doctype html>
+<html>
+  <head>
+  <script src="../js/jquery.js"></script>
+  <script src="../js/script.js"></script>
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css">
+    <link href='https://fonts.googleapis.com/css?family=Rye' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="border-container">
+        <h1>What should i wear?</h1>
+        <br>
+        {{#logged_in}}
+        <div class="col-lg-6 center-block">
+          <div class="alert alert-dismissible alert-warning">
+            <h4>Welcome {{email}}!</h4><br>
+            <button id="delete" type="submit" class="pure-button">User Remove</button><br>
+             <p class="prompt">What city are you in, {{email}}?</p>
+
+              <!-- <form class="pure-form"> -->
+              <input id="city_entered" type="text" class="pure-input-rounded">
+              <button id="submit_button" type="submit" class="pure-button">Search</button> </p>
+          </div>
+        <div id="container">
+
+          <div id="weather"> </div>
+
+        </div>
+        <div id= containerClothes>
+         {{}}
+
+        </div>
+        <div>
+          <input id="clothes" type="text" class="pure-input-rounded">
+              <button id="clothe_button" type="submit" class="pure-button">what should i wear!</button> </p>
+              <p>HOT,COLD OR RAINY</p>
+          <!-- div id="clothes"> </div> -->
+          <div id="result_data"></div>
+          <div id= "category"></div>
+          <div id="wearClothes">
+          </div>
+
+        </div>
+
+          <a href="/logout">log out?</a>
+        </div>
+        {{/logged_in}}
+        {{^logged_in}}
+        <div class="col-lg-6 center-block">
+          <div class="well bs-component">
+            <form class="form-horizontal" action="/login" method="post">
+              <fieldset>
+                <legend>Login</legend>
+                <div class="form-group">
+                  <label for="inputEmail" class="col-lg-2 control-label">Email</label>
+                  <div class="col-lg-10">
+                    <input name="email" type="text" class="form-control" id="inputEmail" placeholder="Email">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="inputPassword" class="col-lg-2 control-label">Password</label>
+                  <div class="col-lg-10">
+                    <input name="password" type="password" class="form-control" id="inputPassword" placeholder="Password">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="col-lg-10 col-lg-offset-2">
+                    <button type="submit" class="btn btn-primary">Login</button>
+                  </div>
+                </div>
+              </fieldset>
+            </form>
+          </div>
+          <p>Not a member? <a href="/signup">Sign Up!</a></p>
+        </div>
+        {{/logged_in}}
+      </div>
+    </div>
+  </body>
+</html>
